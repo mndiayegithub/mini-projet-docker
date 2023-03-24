@@ -1,0 +1,22 @@
+version: '2.2'
+services:
+  api-student-list:
+    image: student_list_api.img:latest
+    container_name: student_list_api
+    volumes:
+     - ./simple_api:/data
+    ports:
+     - 81:5000
+
+  website:
+    image: php:apache
+    container_name: student_list_website
+    environment:
+      - USERNAME=toto
+      - PASSWORD=python
+    volumes:
+      - ./website:/var/www/html
+    ports:
+      - 80:80
+    depends_on:
+      - api-student-list
