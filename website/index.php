@@ -30,7 +30,11 @@
               $list = json_decode(file_get_contents($url, false, $context), true);
               echo "<p style='color:red;; font-size: 20px;'>This is the list of the student with age</p>";
               foreach($list["student_ages"] as $key => $value) {
+<<<<<<< HEAD
                   echo "- $key is $value <br>";
+=======
+                  echo "- $key is $value years old <br>";
+>>>>>>> 8b3daaae2ecbe2b2397ae7bcc23e3e410315cd15
               }
              }
             ?>
