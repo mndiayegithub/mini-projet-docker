@@ -47,7 +47,7 @@ My work has to :
 
 ## Action plan
 ### Files used and their role
-In the delivery, you will three files : **Dockerfile**, **docker-compose.yml** and **docker-compose_registry**.yml.
+In the delivery, you will have three files : **Dockerfile**, **docker-compose.yml** and **docker-compose_registry**.yml.
 - docker-compose.yml : To launch the application API and Website
 - docker-compose-registry.yml : To launch the local registry and its frontend
 - simple_api/student_age.py : Contains the source code of the python API
