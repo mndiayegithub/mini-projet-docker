@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  registry:
+    image: registry:2
+    container_name: pozos_registry
+    ports:
+      - 5000:5000
+    environment:
+      - REGISTRY_STORAGE_DELETE_ENABLED=true
+
+
+  docker-registry-ui:
+    image: joxit/docker-registry-ui:static
+    container_name: frontend-registry
+    ports:
+      - 8090:80
+    environment:
+      - REGISTRY_URL=http://pozos_registry:5000
+      - DELETE_IMAGES=true
+      - REGISTRY_TITLE=Pozos registry
