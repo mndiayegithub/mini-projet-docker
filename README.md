@@ -84,12 +84,14 @@ docker images
 docker network create student_list_network --driver=bridge
 docker network ls
 ```
+
 ![image](https://user-images.githubusercontent.com/58290325/227365330-ff4565fe-7a8c-420e-83db-356ea6de1c08.png)
 
 4. Run the API image as a container :
 ```
 docker run --rm -d --name=student_list_api --network=student_list_network -v ./simple_api:/data student_list_api.img
 ```
+
 ![image](https://user-images.githubusercontent.com/58290325/227372635-1fb06593-a572-4229-82d9-dcc172beb4ff.png)
 
 Firstly, on the built image, port 5000 was already exposed so I didn't had to add port argument on the command. 
@@ -116,6 +118,7 @@ docker ps
 ```
 docker exec -it webapp_student_list curl -u toto:python -X GET http://student_list_api:5000/pozos/api/v1.0/get_student_ages
 ```
+
 ![image](https://user-images.githubusercontent.com/58290325/227376291-2492b80b-b533-4f9c-8bf7-83069c76d363.png)
 
 - By using a web browser :
